@@ -2,8 +2,11 @@
 #app { max-width: 850px; margin: 0 auto; }
 */
 
-nav.so-topnav {  padding: 1px 0 16px 18px;  color: #bbbbbb ; }
-nav.so-topnav a {  color: #99ffff; margin: 0 3px; }
+nav.so-topnav  {  padding: 1px 0 16px 18px;  color: #bbbbbb ; }
+nav.so-footernav {  padding: 11px 0 16px 18px;  color: #bbbbbb ; }
+nav.so-footernav a,
+nav.so-topnav a {  color: #99ffff; margin: 0 2px; }
+nav.so-footernav a:hover,
 nav.so-topnav a:hover {  color: #ffffff ;}
 
 /*   ==============================   */
@@ -73,29 +76,39 @@ img.so-55sLogo{ width:150px; height:48px; margin:0; margin-top:10px; margin-bott
 .so-assessmentHeader h2 { font-size: 30px;  line-height:auto;  }
 .so-lgScreenTxt {display: none;}
 .so-assessmentHeader p { padding: 6px 4px; font-size: 18px;  line-height:auto;  margin-bottom:6px; }
-.so-container .so-midSection { padding: 20px; }
+.so-container .so-midSection { padding: 20px 20px 30px 20px; }
 
 .so-LRpad40_0 { padding: 0px 20px; }
 .justify-content-center {  text-align: center; }
+.justify-content-right {  text-align: right; }
 
 
 .so-container .so-spinner-midSection { background-color: #ffffff; padding:0;}
 .so-whiteBG  { background-color: #ffffff; }
 
-.so-container .so-midSection .btn-primary { background-color: #203239; border:solid 1px #003333}
+.so-container .so-midSection .btn-primary { background-color: #336699; border:solid 1px #003333}
 .so-container .so-midSection .btn-primary:hover { background-color: #006666; }
 .so-container .so-midSection .btn-outline-primary { border:solid 1px #003333; color:  #003333; }
 .so-container .so-midSection .btn-outline-primary:hover { background-color: #006666; color:  #ffffff;  }
 .card-deck .card { min-width: 220px; }
+
+
+.so-midSection .text-center.card { margin-top: 12px ;  }
+.so-start-button { padding-top:10px}
+
 .w-100 { width: 100%; }
 .w-80 { width: 80%; }
 
 .my-ul-list .mt-3, .my-ul-list .my-3 {  margin-top: 0.2rem ; }
 .my-ul-list .mb-4, .my-ul-list .my-4 { margin-bottom: 1.5rem ; }
 
-.so-courseListCol.so-col  {padding-left: 6px; padding-right:4px; display: flex;
-  align-items: center; }
-.testcols12 { border-top:solid 1px #20323a;  margin: 2px 0px;}
+.so-courseListCol.so-col  {padding-left: 6px; padding-right:10px; display: flex;  align-items: center; word-break:break-all;}
+.so-courseListCol.so-col.btnRt { text-align:right;    display:inline-block; padding-top: 5px;}
+.testcols12 { border-top:solid 1px #20323a;  margin: 2px 0px;padding-top: 6px;}
+.so-courseListCol.so-col .btn-light {  border: solid 1px #6699cc; }
+
+
+
 
 .so-heading {font-weight:900; }
 .so-NotesSpacing {padding-left: 20px; display:none;}
@@ -104,6 +117,14 @@ img.so-55sLogo{ width:150px; height:48px; margin:0; margin-top:10px; margin-bott
 
 .so-delete-btn {   color: #ff9900;   border-color: #ff9900; }
 .so-delete-btn:hover {   background-color: #ff9900;   color: #ffffff; }
+
+.so-aboutImg-div {padding: 20px;}
+
+.so-aboutImg-div .so-aboutImg {max-width: 80%;}
+
+
+
+
 
 @media (min-width: 200px) { 
   .container { width: 380px; }

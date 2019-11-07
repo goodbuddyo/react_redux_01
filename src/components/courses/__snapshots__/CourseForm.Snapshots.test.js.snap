@@ -72,16 +72,16 @@ exports[`sets submit button label 'Save' when saving is false 1`] = `
     className="form-group"
   >
     <label
-      htmlFor="category"
+      htmlFor="refurl"
     >
-      Category
+      Reference URL
     </label>
     <div
       className="field"
     >
       <input
         className="form-control"
-        name="category"
+        name="refurl"
         onChange={[MockFunction]}
         type="text"
         value="JavaScript"
@@ -170,16 +170,16 @@ exports[`sets submit button label 'Saving...' when saving is true 1`] = `
     className="form-group"
   >
     <label
-      htmlFor="category"
+      htmlFor="refurl"
     >
-      Category
+      Reference URL
     </label>
     <div
       className="field"
     >
       <input
         className="form-control"
-        name="category"
+        name="refurl"
         onChange={[MockFunction]}
         type="text"
         value="JavaScript"

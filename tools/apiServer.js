@@ -27,7 +27,7 @@ server.use(jsonServer.bodyParser);
 
 // Simulate delay on all requests
 server.use(function(req, res, next) {
-  setTimeout(next, 2000);
+  setTimeout(next, 10);
 });
 
 // Declaring custom routes below. Add custom routes before JSON Server router
@@ -73,6 +73,6 @@ function createSlug(value) {
 function validateCourse(course) {
   if (!course.title) return "Title is required.";
   if (!course.authorId) return "Author is required.";
-  if (!course.category) return "Category is required.";
+  if (!course.refurl) return "Reference URL is required.";
   return "";
 }

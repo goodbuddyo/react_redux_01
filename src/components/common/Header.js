@@ -13,7 +13,9 @@ const Header = () => {
        
         </div>
         <div className="col-4 text-center so-nopad">
-          <a className="blog-header-logo text-dark" href="#"><img src="/static/img/55sLogo454x140.png" className="so-55sLogo" alt="Logo" /></a>
+          <NavLink to="/" >
+            <img src="/static/img/5-5sLogo04.gif" className="so-55sLogo" alt="Logo" />
+          </NavLink>
         </div>
         <div className="col-4 d-flex justify-content-end align-items-center">
   
@@ -23,18 +25,36 @@ const Header = () => {
 
 
     <nav className="so-topnav">
-      <NavLink to="/" activeStyle={activeStyle} exact>
-        Home
+      <NavLink to="/courses" activeStyle={activeStyle}>
+        Courses of Actions
+      </NavLink>
+      {" | Steps "}
+      <NavLink to="/stepone" activeStyle={activeStyle}>
+        1
       </NavLink>
       {" | "}
-      <NavLink to="/courses" activeStyle={activeStyle}>
-        Courses of Action
+      <NavLink to="/steptwo" activeStyle={activeStyle}>
+      2
+      </NavLink>
+      {" | "}
+      <NavLink to="/stepthree" activeStyle={activeStyle}>
+      3
+      </NavLink>
+      {" | "}
+      <NavLink to="/stepfour" activeStyle={activeStyle}>
+      4
+      </NavLink>
+      {" | "}
+      <NavLink to="/stepfive" activeStyle={activeStyle}>
+      5
       </NavLink>
       {" | "}
       <NavLink to="/about" activeStyle={activeStyle}>
-      About 5-5s.com
+      About 
       </NavLink>
-    </nav></div>
+
+    </nav>
+    </div>
   );
 };
 

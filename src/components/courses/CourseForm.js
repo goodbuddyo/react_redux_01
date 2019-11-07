@@ -31,9 +31,9 @@ const CourseForm = ({
 
       <SelectInput
         name="authorId"
-        label="Priority"
+        label="Priority Level"
         value={course.authorId || ""}
-        defaultOption="Select Priority"
+        defaultOption="Select Level"
         options={authors.map(author => ({
           value: author.id,
           text: author.name
@@ -43,11 +43,11 @@ const CourseForm = ({
       />
 
       <TextInput
-        name="category"
-        label="Category"
-        value={course.category}
+        name="refurl"
+        label="Reference URL"
+        value={course.refurl}
         onChange={onChange}
-        error={errors.category}
+        error={errors.refurl}
       />
 
       <button type="submit" disabled={saving} className="btn btn-primary">

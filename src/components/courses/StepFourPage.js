@@ -4,11 +4,12 @@ import { loadCourses, saveCourse } from "../../redux/actions/courseActions";
 import { loadAuthors } from "../../redux/actions/authorActions";
 import PropTypes from "prop-types";
 import CourseForm from "./CourseForm";
+import StepFourContent from "./steps/StepFourContent";
 import { newCourse } from "../../../tools/mockData";
 import Spinner from "../common/Spinner";
 import { toast } from "react-toastify";
 
-export function ManageCoursePage({
+export function StepFourPage({
   courses,
   authors,
   loadAuthors,
@@ -78,6 +79,8 @@ export function ManageCoursePage({
   return authors.length === 0 || courses.length === 0 ? (
     <Spinner />
   ) : (
+    
+    <>
     <CourseForm
       course={course}
       errors={errors}
@@ -86,10 +89,13 @@ export function ManageCoursePage({
       onSave={handleSave}
       saving={saving}
     />
+    <StepFourContent />
+
+    </>
   );
 }
 
-ManageCoursePage.propTypes = {
+StepFourPage.propTypes = {
   course: PropTypes.object.isRequired,
   authors: PropTypes.array.isRequired,
   courses: PropTypes.array.isRequired,
@@ -125,4 +131,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ManageCoursePage);
+)(StepFourPage);

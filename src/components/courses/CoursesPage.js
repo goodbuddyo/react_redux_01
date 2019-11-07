@@ -11,7 +11,8 @@ import { toast } from "react-toastify";
 
 class CoursesPage extends React.Component {
   state = {
-    redirectToAddCoursePage: false
+    redirectToAddCoursePage: false,
+    redirectToStepOnePage: false
   };
 
   componentDidMount() {
@@ -31,11 +32,16 @@ class CoursesPage extends React.Component {
   }
 
   handleDeleteCourse = async course => {
-    toast.success("Course deleted");
-    try {
-      await this.props.actions.deleteCourse(course);
-    } catch (error) {
-      toast.error("Delete failed. " + error.message, { autoClose: false });
+    const { courses  } = this.props;
+      if (courses.length === 1) {
+        alert("Min 1 course required ");
+      }  else {
+        toast.success("Course deleted");
+      try {
+        await this.props.actions.deleteCourse(course);
+      } catch (error) {
+        toast.error("Delete failed. " + error.message, { autoClose: false });
+      }
     }
   };
 
@@ -43,6 +49,7 @@ class CoursesPage extends React.Component {
     return (
       <div className="container so-midSection so-whiteBG">
         {this.state.redirectToAddCoursePage && <Redirect to="/course" />}
+        {this.state.redirectToStepOnePage && <Redirect to="/course/step/one" />}
         <h2>Courses of Action</h2>
         {this.props.loading ? (
           <Spinner />
@@ -56,59 +63,17 @@ class CoursesPage extends React.Component {
               Add Course
             </button>
 
-            <p className="so-back-buttons">Back to step: <br />
-            <button
-              style={{ marginBottom: 20 }}
-              className="btn so-btn-backto  add-course"
-              onClick={() => this.setState({ redirectToAddCoursePage: true })}
-            >
-              One
-            </button>
-            
-
-            <button
-              style={{ marginBottom: 20 }}
-              className="btn so-btn-backto add-course"
-              onClick={() => this.setState({ redirectToAddCoursePage: true })}
-            >
-              Two
-            </button>
-            
-
-            <button
-              style={{ marginBottom: 20 }}
-              className="btn so-btn-backto  add-course"
-              onClick={() => this.setState({ redirectToAddCoursePage: true })}
-            >
-              Three
-            </button>
-            
-
-            <button
-              style={{ marginBottom: 20 }}
-              className="btn so-btn-backto  add-course"
-              onClick={() => this.setState({ redirectToAddCoursePage: true })}
-            >
-              Four
-            </button>
-            
-
-            <button
-              style={{ marginBottom: 20 }}
-              className="btn so-btn-backto  add-course"
-              onClick={() => this.setState({ redirectToAddCoursePage: true })}
-            >
-              Five
-            </button>
             
 
 
-            </p>
+         
 
             <CourseList
               onDeleteClick={this.handleDeleteCourse}
               courses={this.props.courses}
             />
+
+            
           </>
         )}
       </div>
